@@ -67,6 +67,10 @@ header{
     background-color: lightskyblue;
 }
 
+#result{
+    text-align: center;
+}
+
 .card_grid_bomb{
 
 background-color: red !important;

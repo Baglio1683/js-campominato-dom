@@ -5,8 +5,8 @@ const btn = document.querySelector("button");
 
 btn.addEventListener("click" , CreateCards);
 
+let count; 
 
- 
 let arrayBomb;
 
 // SECTION DEFINITION FUNCTION 
@@ -18,7 +18,8 @@ let arrayBomb;
  * @returns {void}
  */
 function ShowNumber(){
-    this.classList.add("card_grid_click")      
+    this.classList.add("card_grid_click") 
+    count++     
 }
 
 
@@ -29,6 +30,8 @@ function ShowNumber(){
  * @returns {void}
  */
 function CreateCards(){
+
+     count = 0; 
 
      grid.innerHTML = ""; 
 
@@ -98,6 +101,7 @@ function GenerateBombs(max){
 function ShowBomb(){
 
     let cardGrid; 
+    const res = document.getElementById("result")
 
    if(this.classList.contains("card_grid")){
     cardGrid = document.getElementsByClassName("card_grid")
@@ -121,10 +125,15 @@ function ShowBomb(){
     }
 
    if(find){
-    cardGrid[j].classList.add("card_grid_bomb") 
+    cardGrid[j].classList.add("card_grid_bomb"); 
+   }
+   else{
+    cardGrid[j].removeEventListener('click' , ShowNumber);
    }
 
    }
 
+   res.innerHTML = `il Tuo punteggio è: ${count}`
+  
 }
 
