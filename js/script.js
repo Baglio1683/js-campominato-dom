@@ -9,6 +9,9 @@ let count;
 
 let arrayBomb;
 
+const res = document.getElementById("result")
+
+
 // SECTION DEFINITION FUNCTION 
 
 /**
@@ -19,7 +22,7 @@ let arrayBomb;
  */
 function ShowNumber(){
     this.classList.add("card_grid_click") 
-    count++     
+    count++    
 }
 
 
@@ -34,6 +37,8 @@ function CreateCards(){
      count = 0; 
 
      grid.innerHTML = ""; 
+
+     res.innerHTML = ""; 
 
      const sel = document.getElementById("select_cards");   
      arrayBomb = GenerateBombs(sel.value)
@@ -101,8 +106,7 @@ function GenerateBombs(max){
 function ShowBomb(){
 
     let cardGrid; 
-    const res = document.getElementById("result")
-
+   
    if(this.classList.contains("card_grid")){
     cardGrid = document.getElementsByClassName("card_grid")
      }
@@ -132,8 +136,18 @@ function ShowBomb(){
    }
 
    }
-
+   if(this.classList.contains("card_grid") && count == 84){
+    res.innerHTML = `Hai Vinto !!!`
+   }
+   if(this.classList.contains("card_grid_9") && count == 65){
+     res.innerHTML = `Hai Vinto !!!`
+   }
+   if(this.classList.contains("card_grid_7") && count == 33){
+     res.innerHTML = `Hai Vinto !!!`
+   }
+   else{
    res.innerHTML = `il Tuo punteggio è: ${count}`
-  
+   }
+
 }
 
