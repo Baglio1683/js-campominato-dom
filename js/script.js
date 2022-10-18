@@ -6,10 +6,8 @@ const btn = document.querySelector("button");
 btn.addEventListener("click" , CreateCards);
 
 
-const sel1 = document.getElementById("select_cards");   
-let i= 1;
-const arrayBomb = GenerateBombs(sel1.value); 
-
+ 
+let arrayBomb;
 
 // SECTION DEFINITION FUNCTION 
 
@@ -35,7 +33,7 @@ function CreateCards(){
      grid.innerHTML = ""; 
 
      const sel = document.getElementById("select_cards");   
-
+     arrayBomb = GenerateBombs(sel.value)
 
      let i= 1;
 
@@ -78,7 +76,7 @@ function GenerateBombs(max){
 
   while(i < 16){
 
-      let num = Math.floor((Math.random()*(max-1))+1)
+      let num = Math.floor((Math.random()*(max))+1)
 
       if(!arrayB.includes(num)){
     
@@ -99,8 +97,18 @@ function GenerateBombs(max){
 
 function ShowBomb(){
 
+    let cardGrid; 
 
-    const cardGrid = document.getElementsByClassName("card_grid") 
+   if(this.classList.contains("card_grid")){
+    cardGrid = document.getElementsByClassName("card_grid")
+     }
+     if(this.classList.contains("card_grid_9")){
+        cardGrid = document.getElementsByClassName("card_grid_9")
+    }
+    if(this.classList.contains("card_grid_7")){
+      cardGrid = document.getElementsByClassName("card_grid_7")
+      }
+
 
    for(let j = 0 ; j < cardGrid.length ; j ++){
 
