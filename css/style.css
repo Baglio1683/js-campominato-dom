@@ -1,0 +1,78 @@
+/* Default Settings  */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Setting of header  */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: center;
+    height: 10vh;
+}
+
+/* Setting of container  */
+.container{
+    background-color: lightpink;
+    height: 90vh;
+    padding-top: 15px;
+}
+
+/* Setting of grid  */
+.box_grid{
+    display: flex;
+    flex-wrap: wrap;
+   height: 80vh;
+   width: 80vw; 
+}
+
+/* Setting of card grid  10x10*/
+.card_grid{
+    border: 1px solid white;
+    height: calc(80vh / 10);
+    width: calc(80vw / 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:lightgreen;
+}
+
+/* Setting of card grid 9x9 */
+.card_grid_9{
+    border: 1px solid white;
+    height: calc(80vh / 9);
+    width: calc(80vw / 9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:lightgreen;
+}
+
+/* Setting of card grid 7x7 */
+.card_grid_7{
+    border: 1px solid white;
+    height: calc(80vh / 7);
+    width: calc(80vw / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:lightgreen;
+}
+
+
+
+
+
+
+
+
+
+
+
+.card_grid_click{
+    background-color: lightskyblue;
+}
+
