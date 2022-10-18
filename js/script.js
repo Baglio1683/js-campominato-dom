@@ -8,6 +8,7 @@ btn.addEventListener("click" , CreateCards);
 
 
 
+
 // SECTION DEFINITION FUNCTION 
 
 /**
@@ -34,8 +35,8 @@ function CreateCards(){
      const sel = document.getElementById("select_cards");   
      let i= 1;
 
-     const arrayCards = []
      const arrayBomb = GenerateBombs(sel.value);
+ 
      
      while(i<=sel.value){
 
@@ -52,13 +53,19 @@ function CreateCards(){
        }
 
      card.innerHTML = i;
+
+     if(!arrayBomb.includes(i)){
      card.addEventListener('click' , ShowNumber);
+     }
+     else{
+      card.addEventListener('click' , ShowBomb(arrayBomb)); 
+     }
 
      grid.appendChild(card);
-     arrayCards.push(card.innerHTML);
-    i++;
+     i++;
 
 }
+
 
 }
 
@@ -66,9 +73,9 @@ function CreateCards(){
 function GenerateBombs(max){
 
   const arrayB = []; 
-  let i = 1; 
+  let i = 0; 
 
-  while(i <= 16){
+  while(i < 16){
 
       let num = Math.floor((Math.random()*(max-1))+1)
 
@@ -81,16 +88,34 @@ function GenerateBombs(max){
 
   }
 
-  return arrayB
- 
+  return arrayB;
+
 }
 
 
 
 
 
+function ShowBomb(arr){
 
 
+    const cardGrid = document.getElementsByClassName("card_grid") 
 
+   for(let j = 0 ; j < cardGrid.length ; j ++){
 
+    let find = false; 
+
+    for(let k =0 ; k < arr.length ; k++){
+        if(arr[k] == cardGrid[j].innerHTML){
+            find = true; 
+        }
+    }
+
+   if(find){
+    cardGrid[j].classList.add("card_grid_bomb") 
+   }
+
+   }
+
+}
 

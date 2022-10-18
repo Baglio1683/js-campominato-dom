@@ -62,17 +62,14 @@ header{
     background-color:lightgreen;
 }
 
-
-
-
-
-
-
-
-
-
-
+/* Setting of card grid click  */
 .card_grid_click{
     background-color: lightskyblue;
+}
+
+.card_grid_bomb{
+
+background-color: red !important;
+
 }
 
