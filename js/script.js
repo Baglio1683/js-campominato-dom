@@ -43,6 +43,8 @@ function CreateCards(){
      const sel = document.getElementById("select_cards");   
      arrayBomb = GenerateBombs(sel.value)
 
+     console.log(arrayBomb)
+
      let i= 1;
 
      while(i<=sel.value){
@@ -134,15 +136,16 @@ function ShowBomb(){
    else{
     cardGrid[j].removeEventListener('click' , ShowNumber);
    }
-
    }
+
+
    if(this.classList.contains("card_grid") && count == 84){
     res.innerHTML = `Hai Vinto !!!`
    }
-   if(this.classList.contains("card_grid_9") && count == 65){
+   else if(this.classList.contains("card_grid_9") && count == 65){
      res.innerHTML = `Hai Vinto !!!`
    }
-   if(this.classList.contains("card_grid_7") && count == 33){
+   else if(this.classList.contains("card_grid_7") && count == 33){
      res.innerHTML = `Hai Vinto !!!`
    }
    else{
