@@ -22,6 +22,7 @@ const res = document.getElementById("result")
  */
 function ShowNumber(){
     this.classList.add("card_grid_click") 
+    this.removeEventListener('click' , ShowNumber)
     count++    
 }
 
