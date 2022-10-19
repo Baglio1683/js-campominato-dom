@@ -80,6 +80,11 @@ function CreateCards(){
 }
 
 
+/**
+ * Description Function used for generate 16 numbers random, in the range from 1 to max
+ * @param {number} max number of random numbers generated
+ * @returns {Array} Array of 16 numbers 
+ */
 function GenerateBombs(max){
 
   const arrayB = []; 
@@ -106,6 +111,11 @@ function GenerateBombs(max){
 
 
 
+/**
+ * Description: the function appear 
+ * the bombs when you click one bombs
+ * @returns {void}
+ */
 function ShowBomb(){
 
     let cardGrid; 
